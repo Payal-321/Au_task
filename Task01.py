@@ -1,4 +1,4 @@
-"""
+
 #Q1:- Write a program that will convert celsius value to fahrenheit.
 def celsius_to_fahrenheit(celsius):
     return (celsius * 9/5) + 32
@@ -76,10 +76,10 @@ n = int(input("Enter the term number to find: "))
 d = a2 - a1
 an = a1 + (n - 1) * d
 print(f"The {n}th term of the arithmetic series is: {an}")
-"""
+
 #Q.8:- Given 2 fractions, find the sum of those 2 fractions.Take the numerator and denominator values of the fractions from the user.
 def sum_of_fractions(a,b,c,d):
-  sum_of_fractions = (a*b)+(c*d)/(b*d)
+  sum_of_fractions = ((a*b)+(c*d))/(b*d)
   return sum_of_fractions
 a=int(input("Enter the numerator of the first fraction: "))
 b=int(input("Enter the denominator of the second fraction: "))
@@ -88,7 +88,7 @@ d=int(input("Enter the denominator of the forth fraction: "))
 sum = sum_of_fractions(a,b,c,d)
 print("The sum of the fractions is:",sum)
 
-"""
+
 # Q.9:- Given the height, width and breadth of a milk tank, you have to find out how many glasses of milk can be obtained? Assume all the inputs are provided by the user.
 #Input:
 #Dimensions of the milk tank<br>
@@ -102,4 +102,4 @@ breadth = float(input("Enter the breadth of the milk tank (cm): "))
 glass_volume = 250 
 tank_volume = height * width * breadth
 number_of_glasses = tank_volume // glass_volume 
-print(f"The number of full glasses of milk that can be obtained is: {int(number_of_glasses)}")"""
+print(f"The number of full glasses of milk that can be obtained is: {int(number_of_glasses)}")
