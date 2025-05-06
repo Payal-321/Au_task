@@ -5,23 +5,21 @@
 #5-10 : 10%
 #10-20 : 20%
 #aboove 20 : 30%**bold text**
-def Salary(HRA,DA,PF):
-  HRA = 10*100/Salary
-  DA = 5*100/Salary
-  PF = 3*100/Salary
-  if Salary<5:
+def final_Salary(Salary):
+  HRA = 0.10*Salary
+  DA = 0.05*Salary
+  PF = 0.03*Salary
+  if Salary<=5000:
     print("Tax deduction 0%")
-  elif Salary>5 and Salary<10:
+  elif Salary<=10000:
     print("Tax deduction 10%")
-  elif Salary>10 and Salary<20:
+  elif Salary<=20000:
     print("Tax deduction 20%")
-  elif Salary>20:
-    print("Tax deduction 30%")
   else:
     print("Salary is not correct")
-  final_salary = Salary - HRA - DA - PF
-  print(final_salary)
-
+  final = Salary - (HRA+DA+PF)
+  return final
+print(final_Salary(15000) )
 
 #Problem2: Write a program that take a user input of three angles and will find out whether it can form a triangle or not.
 a = int(input("Enter a angle"))
@@ -50,7 +48,17 @@ else:
 #2. km to miles
 #3. USD to INR
 #4. exit
-
+def convert(n):
+  ft=n/30.48
+  miles=n/1.609
+  INR=n/84.40
+  return ft,miles,INR
+n=int(input("Enter a number:"))
+ft, miles, INR = convert(n)
+print("value of {n}cm to {ft}ft:",ft)
+print("value of {n}km to {miles}miles:",miles)
+print("value of {n}usd to {INR}INR:",INR)
+print("Exit")
 
 
 #Problem 5: Display Fibonacci series up to 10 terms.
@@ -118,13 +126,13 @@ print("Final sum:", sum)
 #Display the sum and average of all the numbers.
 a = int(input("Enter a number"))
 sum=0
+temp = a
 for a in range(a,0,-1):
+  sum =sum+a
+  Average=sum/temp
   print(a)
-sum+=a
 print(sum)
-Average = sum/a
 print(Average)
-
 
 #Problem 10: Write a program which will find all such numbers which are divisible by 7 but are not a multiple of 5,
 #between 2000 and 3200 (both included). The numbers obtained should be printed in a comma-separated sequence on a single line.
@@ -168,10 +176,10 @@ for i in range(1000,3000):
 #Output:2
 x=0
 y=0
-print("Press 1 for upside")
-print("Press 2 for downside")
-print("Press 3 for leftside")
-print("Press 4 for rightside")
+print("up",1)
+print("down",2)
+print("left",3)
+print("right",4)
 a1 = int(input("Enter a number:"))
 a2 = int(input("Enter a number:"))
 if (a1== 1):
@@ -188,7 +196,7 @@ elif (a1 == 4):
     print("for move right",a2)
 else:
     print(exit)
-
+    
 #Problem 13:Write a program to print whether a given number is a prime number or not
 n = int(input("Enter a number"))
 if n==1 or n==0:
@@ -246,14 +254,14 @@ x3=int(input(" "))
 y3=int(input(" "))
 x4=int(input(" "))
 y4=int(input(" "))
-l1=(x1,y1)
-l2=(x2,y2)
-r1=(x3,y3)
-r2=(x4,y4)
-def do_overlap(l1, r1, l2, r2):
-    if l1>r2 or l2>r1:
-        print("do overlap")
-    if r1>l2 or r2>l1:
-        print("do not overlap")
-    print("do overlap")
-do_overlap(l1,r1,l2,r2)
+def do_overlap(x1,y1,x2,y2,x3,y3,x4,y4):
+  if x2<=x3 or x4<=x1:
+    return False
+  if y2>=y3 or y4>=y1:
+    return False
+  return True
+if do_overlap(x1, y1, x2, y2, x3, y3, x4, y4):
+  print("do overlap")
+else:
+  print("do not overlap")
+
